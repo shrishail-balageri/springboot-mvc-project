@@ -27,7 +27,7 @@ public class productservice {
         products.add(prod);
         return "product added sucessfully";
     }
-    public String UpdateProduct(product prod){
+    public String updateproduct(product prod){
         for(product p:products){
             if(p.getId()==prod.getId()){
                 p.setName(prod.getName());
@@ -35,5 +35,16 @@ public class productservice {
             }
         }
         return "product not found";
+    }
+
+    public String deleteproduct(int id) {
+        for(product p:products){
+            if(p.getId()==id){
+                products.remove(p);
+                return "deletion sucess";
+            }
+        }
+        return "item not found";
+       
     }
 }
