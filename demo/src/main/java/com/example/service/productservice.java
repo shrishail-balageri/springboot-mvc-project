@@ -23,4 +23,8 @@ public class productservice {
         }
         return null;
     }
+    public String addproduct(product prod){
+        products.add(prod);
+        return "product added sucessfully";
+    }
 }
