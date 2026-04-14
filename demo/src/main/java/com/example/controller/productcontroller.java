@@ -3,6 +3,7 @@ package com.example.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,5 +27,9 @@ public class productcontroller {
     public String addproduct(@RequestBody product prod){
         return service.addproduct(prod);
     }
-    
+    @PutMapping("/update")
+    public String Update(@RequestBody product prod){
+        service.UpdateProduct(prod);
+        return "update sucessful";
+    }
 }

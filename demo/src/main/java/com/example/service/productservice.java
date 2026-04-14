@@ -27,4 +27,13 @@ public class productservice {
         products.add(prod);
         return "product added sucessfully";
     }
+    public String UpdateProduct(product prod){
+        for(product p:products){
+            if(p.getId()==prod.getId()){
+                p.setName(prod.getName());
+                return "update sucessfull";
+            }
+        }
+        return "product not found";
+    }
 }
